@@ -6,33 +6,38 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 
 # Installs
 apt-get update
-apt-get install make
+apt-get install python-software-properties python g++ -y
 apt-get install vim -y
+apt-get install curl -y
 apt-get install mongodb-10gen -y
 apt-get install nginx -y
 
+# Nodejs
+add-apt-repository ppa:chris-lea/node.js
+apt-get update
+apt-get install nodejs -y
+
 # Ruby
-if [[ "$(ruby -v)" != *2.0* ]]
-then
-    wget http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz
-    tar -xvzf ruby-2.0.0-p247.tar.gz 
-    cd ./ruby-2.0.0-p247
-    ./configure --prefix=/usr/local
-    make
-    make install
-fi
+\curl -L https://get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+rvm requirements
+rvm install ruby
+rvm use ruby --default
+rvm rubygems current
 
 # Setup nginx
 ln -fs /vagrant_data /var/www
-mv /vagrant_data/default /etc/nginx/sites-available
+cp /vagrant_data/default /etc/nginx/sites-available
+
+# Rails
+gem install rails
 
 # Start services
-service mongodb start
+service mongodb restart
 service nginx restart
 
 # Boot
 update-rc.d nginx defaults
 
-# Clean Up
-cd /home/vagrant 
-rm ruby* -rf
+# Add vagrant to rvm
+usermod -a -G rvm vagrant
