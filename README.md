@@ -1,5 +1,5 @@
 #Vagrant Ruby on Rails
-Vagrant vm to get an up and running RoR environment. 
+Vagrant dev box to get an up and running RoR environment. 
 
 data/ is sync with /vagrant_data and it's the root directory of nginx. 
 
