@@ -26,11 +26,12 @@ rvm use ruby --default
 rvm rubygems current
 
 # Setup nginx
-ln -fs /vagrant_data /var/www
-cp /vagrant_data/default /etc/nginx/sites-available
+ln -fs /vagrant /var/www
+cp /vagrant/default.nginx /etc/nginx/sites-available
 
 # Rails
-gem install rails
+gem install sinatra --no-ri --no-rdoc
+gem install thin --no-ri --no-rdoc
 
 # Start services
 service mongodb restart

@@ -1,14 +1,21 @@
-#Vagrant Ruby on Rails
-Vagrant dev box to get an up and running RoR environment. 
+#Vagrant Ruby + MongoDB
+Vagrant dev box to get an up and running Ruby + MongoDB environment. 
 
-data/ is sync with /vagrant_data and it's the root directory of nginx. 
+the root of the local directory is sync with /vagrant and it's also the root directory of nginx. 
 
-##This vagrant include :
+##Included :
   * Ubuntu 12.04 64bits
   * nginx
   * rvm
   * Ruby
-  * Ruby On Rails
   * Mongodb
   * node.js
   * npm
+  * Sinatra gem
+  * Thin gem
+
+##Network
+
+There are actually 2 options to contact the VM :
+  * via the private network with the IP address 10.0.0.2
+  * via the public network, IP can be found with ip addr command
