@@ -23,5 +23,6 @@ There are actually 2 options to contact the VM :
 ##Launch the server
 
 ```sh
+cd /vagrant/api
 ruby application.rb
 ```
