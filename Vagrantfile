@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "TennisBox"
+  config.vm.box = "RubyBox"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
   
   config.vm.provision :shell, :path => "bootstrap.sh"
