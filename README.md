@@ -19,10 +19,3 @@ the root of the local directory is sync with /vagrant and it's also the root dir
 There are actually 2 options to contact the VM :
   * via the private network with the IP address 10.0.0.2
   * via the public network, IP can be found with ip addr command
-
-##Launch the server
-
-```sh
-cd /vagrant/api
-ruby application.rb
-```
