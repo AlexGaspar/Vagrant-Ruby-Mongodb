@@ -29,9 +29,10 @@ rvm rubygems current
 ln -fs /vagrant /var/www
 cp /vagrant/default.nginx /etc/nginx/sites-available
 
-# Rails
+# GEMs
 gem install sinatra --no-ri --no-rdoc
 gem install thin --no-ri --no-rdoc
+gem install mongoid --no-ri --no-rdoc
 
 # Start services
 service mongodb restart

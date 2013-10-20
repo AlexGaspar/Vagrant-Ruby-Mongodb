@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.provision :shell, :path => "bootstrap.sh"
   
-  config.vm.synced_folder ".", "/vagrant", :nfs => true
+  config.vm.synced_folder "/home/alex/ruby/api", "/vagrant"
 
   config.vm.network :private_network, ip: "10.0.0.2", id: 'private_network'
   config.vm.network :public_network, id: 'private_network'
