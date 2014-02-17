@@ -19,3 +19,9 @@ the root of the local directory is sync with /vagrant and it's also the root dir
 There are actually 2 options to contact the VM :
   * via the private network with the IP address 10.0.0.2
   * via the public network, IP can be found with ip addr command
+
+##Configuration
+
+Don't forget to replace the path of config.vm.synced_folder with yours :  
+  
+```config.vm.synced_folder "/PATH/TO/DIR", "/vagrant"```
